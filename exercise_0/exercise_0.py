@@ -5,5 +5,5 @@ def exercise_0(inputs): # DO NOT CHANGE THIS LINE
     """
 
     output = inputs ** 2
-    # test pull request from VSCode
+    
     return output       # DO NOT CHANGE THIS LINE
