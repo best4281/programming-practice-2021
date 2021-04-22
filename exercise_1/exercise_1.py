@@ -35,6 +35,11 @@ class Student(Person):
         global studentnum
         studentnum += 1
         self.student_id = "T" + str(studentnum)
+    
+    #Task 5.2
+    def __add__(self,other):
+        print("Please assign new student to lecture using \"lecture + new_student\" instead.")
+        return other
 
     def get_attributes(self):
         try:
@@ -59,7 +64,7 @@ class Teacher(Person):
         except:
             return
 
-#Task 3 - error with attribute "students"
+#Task 3 - done
 class Lecture:
 
     def __init__(self, lecid):
@@ -96,6 +101,11 @@ class Lecture:
             return self.students
         else:
             return False
+    
+    #Task 5.1
+    def __add__(self, new_student):
+        self.assign_students(new_student)
+        return self
 
 def exercise_1(inputs): # DO NOT CHANGE THIS LINE
     """
@@ -144,7 +154,8 @@ def exercise_1(inputs): # DO NOT CHANGE THIS LINE
             print("No teacher with name", inputs[2][x][0], "in this system")
         for y in inputs[2][x][1]:
             try:
-                lec[x].assign_students(stu[y])
+                #lec[x].assign_students(stu[y])
+                lec[x] = lec[x] + stu[y]
             except:
                 print("No student with name", y, "in this system")
 
@@ -178,3 +189,5 @@ def exercise_1(inputs): # DO NOT CHANGE THIS LINE
     }
 
     return output       # DO NOT CHANGE THIS LINE
+
+#exercise_1(inp)
