@@ -4,7 +4,7 @@ You were about to throw a party, however you realise there are many people to in
 To keep a track of people you have invited and know the estimated number of attendees you create a program to keep a track of it.
 
 Task 0.1: Create a class `Party` to keep track of the information about the party. It has one attribute a dictionary `info_attendees` which has family name as key and estimated number of attendees of the family as the value.
-Task 0.2: Create a function `add_attendees` which takes `family_name` and `number_of_attendees` as parameters and add it to the attribute `attendees`.
+Task 0.2: Create a function `add_attendees` which takes `family_name` and `number_of_attendees` as parameters and add it to the attribute `info_attendees`.
 
 Task 1.1: However, you decide to keep a special food and beverages for the kids. You can your invitees and ask them if they are bringing any kids with them. Create a function `detailed_attendees` which takes three lists `family_names`, `adult_attendees` and `child_attendees` and create a new attribute `detailed_info_attendees` which convert this information into a dictionary.
 Task 1.2: You notice that after the re-enquiry there is some discrepancy in your two dictionaries `info_attendees` and `detailed_info_attendees`. Create a function, `check_and_resolve` which checks for any discrepancy and resolves it using comprehension.
