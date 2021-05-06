@@ -13,8 +13,8 @@ r = {
 inp = [p, q, r]
 
 #Task 6 - done
-studentnum = 1000
-teachernum = 2000
+studentnum = 0
+teachernum = 0
 
 #Task 1 - without natural error
 class Person(ABC):
@@ -34,7 +34,7 @@ class Student(Person):
         #Task 6.1 - assigning student_id on the go
         global studentnum
         studentnum += 1
-        self.student_id = "T" + str(studentnum)
+        self.student_id = "S" + str(studentnum + 1000)
     
     #Task 5.2
     def __add__(self,other):
@@ -56,7 +56,7 @@ class Teacher(Person):
         #Task 6.2 - assigning teacher_id on the go
         global teachernum
         teachernum += 1
-        self.teacher_id = "T" + str(teachernum)
+        self.teacher_id = "T" + str(teachernum + 2000)
     
     def get_attributes(self):
         try:
@@ -120,19 +120,8 @@ def exercise_1(inputs): # DO NOT CHANGE THIS LINE
         'l101':['t101': ['s101', 's102']], 
         'l102': ['s101', 's102', 's103']]
     }
-    p = Person()
-    s = Student()
-    t = Teacher()
-    l = Lecture()
     
-    output = {
-        1: [Person, p], 
-        2: [Teacher, Student, t, s], 
-        3: [Lecture, l], 
-        4: [Lecture, l], 
-        5: [Lecture, Student, l, s], 
-        6: [Teacher, Student, t, s]
-    }
+    output = [Person, Teacher, Student, Lecture]
     """
     #Creating dictionary of instances of student, with students' name as keys
     stu = {}
@@ -173,7 +162,7 @@ def exercise_1(inputs): # DO NOT CHANGE THIS LINE
 
     print()
     for x in stu:
-        print(stu[x].name, "has enrolled in lecture:", *stu[x].lecture_enrolled)
+        print(stu[x].name, "has enrolled in lecture:", *sorted(stu[x].lecture_enrolled))
 
     print()
     for x in tea:
@@ -184,7 +173,7 @@ def exercise_1(inputs): # DO NOT CHANGE THIS LINE
         2: [Teacher, Student, tea, stu], 
         3: [Lecture, lec], 
         4: [Lecture, lec], 
-
+        5: [Lecture, Student, lec, stu],
         6: [Teacher, Student, tea, stu]
     }
 
