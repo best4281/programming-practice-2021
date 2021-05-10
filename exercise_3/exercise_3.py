@@ -1,10 +1,18 @@
-def exercise_3(inputs): # DO NOT CHANGE THIS LINE
-    """
-    This functions receives the input in the parameter 'inputs'. 
-    Change the code, so that the output is sqaure of the given input.
+import exercise_3_lib as elib
 
-    Output should be the name of the class.
-    """
-    output = inputs
+def exercise_3(inputs): # DO NOT CHANGE THIS LINE
+
+    output = elib.second_ordered(inputs)
+    print(output)
 
     return output       # DO NOT CHANGE THIS LINE
+
+print("press Ctrl+C to stop the program")
+while True:
+    try:
+        sentence = input("Please insert the sentence:")
+        exercise_3(sentence)
+    except KeyboardInterrupt:
+        elib.keep_history()
+        break
+print("\nProgram exited.")
