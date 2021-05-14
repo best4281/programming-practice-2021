@@ -7,9 +7,9 @@ def exercise_3(inputs): # DO NOT CHANGE THIS LINE
 
     return output       # DO NOT CHANGE THIS LINE
 
-print("press Ctrl+C to stop the program")
 while True:
     try:
+        print("press Ctrl+C to stop the program")
         sentence = input("Please insert the sentence:")
         exercise_3(sentence)
     except KeyboardInterrupt:

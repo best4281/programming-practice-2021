@@ -1,4 +1,6 @@
 import pickle
+import string
+import re
 
 try:
     with open("history.p", 'rb') as f:
@@ -10,29 +12,13 @@ word_count = 0
 sentence_count = 0
 
 used = False
-vowels = ['a','e','i','o','u']
+vowels_string = "aeiou"
 
 def second_or_first(word):
     try:
         return word[1]
     except:
         return word[0]
-
-#def less_than_five(word_list):
-#    return [word for word in word_list if len(word) < 5]
-
-#Task 3.3
-def less_than_five_without_vowels(word_list):
-    qualified = []
-    for word in word_list:
-        no_vowel = word
-        for alphabet in word.lower():
-            if alphabet in vowels:
-                no_vowel = no_vowel.replace(alphabet, '')
-        #print(no_vowel, word)
-        if len(no_vowel) < 5:
-            qualified.append(word)
-    return qualified
 
 #Task 1
 def second_ordered(sentence):
@@ -43,16 +29,18 @@ def second_ordered(sentence):
         global used
         used = True
         previous_input = sentence
-        words = ' '.join(sentence.split()).split()
+        words = [w.strip(string.punctuation) for w in re.split("[" + string.punctuation + "]\s|\s", sentence) if w != '']
         global word_count
         global sentence_count
+        #Task 2
         word_count += len(words)
-        sentence_count += 1
+        sentence_count += len([w for w in re.split("(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s", sentence) if w != ''])
         words.sort(key = lambda x: second_or_first(x))
         #Task 3.2
         short_word = [w for w in words if len(w) < 5]
-        short_word_without_vowels = less_than_five_without_vowels(words)
-        ### RETURN VALUE FOR TASK 1, 3.1, 3.2, and 2 ###
+        #Task 3.3
+        short_word_without_vowels = [w for w in words if len(w.lower().translate(str.maketrans('', '', vowels_string))) < 5]
+        ### RETURN VALUE FOR TASK 1, 3.1, 3.2, and 2
         return words, short_word, short_word_without_vowels, word_count, sentence_count
         ###
 
