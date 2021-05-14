@@ -29,12 +29,15 @@ def second_ordered(sentence):
         global used
         used = True
         previous_input = sentence
+        #Split the input into words using regex.
         words = [w.strip(string.punctuation) for w in re.split("[" + string.punctuation + "]\s|\s", sentence) if w != '']
         global word_count
         global sentence_count
         #Task 2
         word_count += len(words)
+        #Split the input into sentences using regex and count the length of it.
         sentence_count += len([w for w in re.split("(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s", sentence) if w != ''])
+        #Use [0] instead if [1] does not exist.
         words.sort(key = lambda x: second_or_first(x))
         #Task 3.2
         short_word = [w for w in words if len(w) < 5]
