@@ -1,0 +1,7 @@
+aiohttp>=3.7.4.post0
+discord>=1.0.1
+discord.py>=1.7.2
+google>=3.0.0
+requests>=2.25.1
+steam>=1.2.0
+urllib3>=1.26.4
