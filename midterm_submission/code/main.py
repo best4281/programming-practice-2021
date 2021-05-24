@@ -6,6 +6,7 @@ import discord
 from discord.ext import commands
 from settings import *
 
+#Set up logging: https://discordpy.readthedocs.io/en/stable/logging.html
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -14,6 +15,7 @@ logger.addHandler(handler)
 
 prefixFile = absDir + "/" + prefixFileName
 
+#For getting the member list, you must have intents enabled
 intents = discord.Intents.all()
 
 #retrieve prefix of that server
@@ -25,6 +27,7 @@ def retrieve_prefix(bot, ctx):
     except:
         return defaultPrefix
 
+#Set active status of the bot
 activity = discord.Activity(type = discord.ActivityType.watching, name = "the world burn 🔥")
 
 #Create an instance of bot
@@ -86,4 +89,5 @@ if __name__ == "__main__":
         except (discord.ClientException, ModuleNotFoundError):
             print(f"Failed to load extension {extension}.")
 
+#Run the bot with the given credential
 bot.run(discordToken)
