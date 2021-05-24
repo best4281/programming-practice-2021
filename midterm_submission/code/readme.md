@@ -1,6 +1,6 @@
 # Unnamed Discord bot by Sihanern Thitisan
 
-This is a bot file with a steam module
+This is a bot main file with a steam module
 
 ## Activation
 
@@ -13,4 +13,4 @@ Then invite the bot to your discord server.
 
 ## Disclaimer
 
-This is only the part of the full bot I have created, other parts were not included in this repository. After creating more features, I might made it open source on my own repository (really far future)
+This is only the part of the full bot I have (tried to) created, other (experimental) parts were not included in this repository. After creating and polishing more features, I might update the bot as a final project. Although I might seems like it does not do much things, I have learned a lot of things along the way.
