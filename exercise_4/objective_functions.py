@@ -11,6 +11,10 @@ def rosenbrock(var):
 def sphere(var):
     return numpy.sum(numpy.square(var))
 
+def salomon(var):
+    var = numpy.array(var)
+    return 1.0 - numpy.cos(2.0*numpy.pi*numpy.sqrt(sum(var**2.0))) + 0.1*numpy.sqrt(sum(var**2.0))
+
 #e-15 but no big change after generation 800
 '''def ackley_v1(var):
     l = len(var)

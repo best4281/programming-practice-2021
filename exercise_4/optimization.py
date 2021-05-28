@@ -178,7 +178,7 @@ class DE(populationClass):
         # i = numpy.random.randint(self.number_of_individuals)
         # j = numpy.random.randint(self.number_of_individuals)
         # k = numpy.random.randint(self.number_of_individuals)
-        mutation_vector = self.population[i] - self.population[j] * self.F + self.population[k]
+        mutation_vector = (self.population[i] - self.population[j]) * self.F + self.population[k]
         child = [father[i] if numpy.random.rand() < 0.8 else mutation_vector[i] for i in range(self.number_of_variables)]
         return child
 
