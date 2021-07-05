@@ -13,4 +13,4 @@ However, the font is already embeded inside the file if you download and open it
 
 ## Code files
 
-You can take a look at my [GitHub repository](https://github.com/best4281/cherng-bot) for the code when it became public repository.
+You can take a look at my [GitHub repository](https://github.com/best4281/cherng-bot) for the code.
